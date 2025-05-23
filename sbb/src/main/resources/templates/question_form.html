@@ -2,17 +2,18 @@
 <div layout:fragment="content" class="container">
     <h5 class="my-3 border-bottom pb-2">질문 등록</h5>
     <form th:action="@{/question/create}" th:object="${questionForm}" method="post">
-        <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+        <!-- <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
             <div th:each="err : ${#fields.allErrors()}" th:text="${err}">
             </div>
-        </div>
+        </div> -->
+        <div th:replace="~{form_errors :: formErrorsFragment}"></div> <!-- th:replace 속성을 사용하면 템플릿 내에 공통 템플릿을 삽입할 수 있음-->
         <div class="mb-3">
             <label for="subject" class="form-label">제목</label>
-            <input type="text" name="subject" id="content" class="form-control">
+            <input type="text" th:field="*{subject}" id="content" class="form-control"> <!--th:field 기존에 입력된 값을 채워 오류가 발생하더라도 기존에 입력한 값이 유진됨-->
         </div>
         <div class="mb-3">
             <label for="subject" class="form-label">내용</label>
-            <textarea name="content" id="content" class="form-control"
+            <textarea th:field="*{content}" id="content" class="form-control"
             rows="10"></textarea>
         </div>
         <input type="submit" value="저장하기" class="btn-primary my-2">

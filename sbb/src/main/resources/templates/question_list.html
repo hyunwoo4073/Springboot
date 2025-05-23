@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr th:each="question, loop : ${questionList}">
+            <tr th:each="question, loop : ${paging}">
                 <td th:text="${loop.count}"></td>
                 <td>
                     <a th:href="@{|/question/detail/${question.id}|}" 
@@ -21,6 +21,28 @@
             </tr>
         </tbody>
     </table>
+    <!-- 페이징 처리 시작 -->
+    <div th:if="${!paging.isEmpty()}">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'"> <!-- 이전 페이지 없으면 링크 비활성화 -->
+                <a class="page-link" th:href="@{|?page=${paging.number-1}|}"> <!-- 이전 페이지 링크 생성 -->
+                    <span>이전</span>
+                </a>
+            </li>
+            <li th:each="page : ${#numbers.sequence(0, paging.totalPages-1)}"
+            th:if="${page >= paging.number-5 and page <= paging.number+5}" 
+            th:classappend="${page == paging.number} ? 'active'" class="page-item">
+                <a th:text="${page}" class="page-link" 
+                th:href="@{|?page=${page}|}"></a>
+            </li>
+            <li class="page-item" th:classappend="${!paging.hasNext} ? 'disabled'"> <!-- 다음 페이지 없으면 링크 비활성화 -->
+                <a class="page-link" th:href="@{|?page=${paging.number+1}|}"> <!-- 다음 페이지 링크 생성 -->
+                    <span>다음</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 페이징 처리 끝 -->
     <a th:href="@{/question/create}" class="btn-primary">질문 등록하기</a>
 </div>
 </html>

@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable; //변하는 값을 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.data.domain.Page;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.example.sbb.answer.AnswerForm;
 
 @RequestMapping("/question") //url 프리픽스
 @RequiredArgsConstructor
@@ -29,15 +31,19 @@ public class QuestionController {
 
     @GetMapping("/list")
     // @ResponseBody
-    public String list(Model model) {
+    public String list(Model model, @RequestParam(value = "page", defaultValue = "0") 
+    int page) {
         // List<Question> questionList = this.questionRepository.findAll();
-        List<Question> questionList = this.questionService.getList();
-        model.addAttribute("questionList", questionList);
+        // List<Question> questionList = this.questionService.getList();
+        // model.addAttribute("questionList", questionList);
+        Page<Question> paging = this.questionService.getList(page);
+        model.addAttribute("paging", paging);
         return "question_list";
     }
     
     @GetMapping(value = "/detail/{id}")
-    public String detail(Model model, @PathVariable("id") Integer id) {
+    public String detail(Model model, @PathVariable("id") Integer id, AnswerForm 
+    answerForm) {
         Question question = this.questionService.getQuestion(id);
         model.addAttribute("question", question);
         return "question_detail";
