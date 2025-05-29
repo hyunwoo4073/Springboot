@@ -1,6 +1,7 @@
 package com.example.sbb.answer;
 
 import com.example.sbb.question.Question;
+import com.example.sbb.user.SiteUser;
 
 import java.time.LocalDateTime;
 
@@ -32,4 +33,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }

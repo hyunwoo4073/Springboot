@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.time.LocalDateTime;
 
 import com.example.sbb.DataNotFoundException;
+import com.example.sbb.user.SiteUser;
+
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page; //페이징을 위한 클래스
 import org.springframework.data.domain.Pageable; //현재 페이지와 한 페이지에 보여 줄 게시물 개수 등을 설정하여 페이징 요청을 하는 클래스
@@ -40,11 +42,12 @@ public class QuestionService {
         }
     }
 
-    public void create(String subject, String content) {
+    public void create(String subject, String content, SiteUser user) {
         Question q = new Question();
         q.setSubject(subject);
         q.setContent(content);
         q.setCreateDate(LocalDateTime.now());
+        q.setAuthor(user);
         this.questionRepository.save(q);
     }
 }

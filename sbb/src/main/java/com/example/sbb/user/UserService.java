@@ -1,5 +1,10 @@
 package com.example.sbb.user;
 
+import com.example.sbb.DataNotFoundException;
+
+import java.util.Optional;
+
+import org.springframework.security.access.method.P;
 // import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,5 +29,13 @@ public class UserService {
         this.userRepository.save(user);
         return user;
     }
-    
+
+    public SiteUser getUser(String username) {
+        Optional<SiteUser> siteUser = this.userRepository.findByUsername(username);
+        if (siteUser.isPresent()) {
+            return siteUser.get();
+        } else {
+            throw new DataNotFoundException("siteuser not found");
+        }
+    }
 }
