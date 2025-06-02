@@ -17,5 +17,11 @@
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
 <!-- Bootstrap JS -->
 <script th:src="@{/bootstrap.min.js}"></script>
+<!-- 자바스크립트 Start -->
+<th:block layout:fragment="script"></th:block>
+<!-- 자바스크립트 End -->
+<!-- 자바스크립트의 경우 </body> 태크 바로 위에 삽입하는 것을 추천
+화면 출력이 완료된 후에 자바스크립트가 실행되는 것이 좋기 때문
+화면 출력이 완료되지 않은 상태에서 자바스크립트를 실행하면 오류가 발생할 수도 있고 화면 로딩이 지연될 수 있음-->
 </body>
 </html>

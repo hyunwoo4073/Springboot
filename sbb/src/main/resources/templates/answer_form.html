@@ -1,0 +1,15 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container">
+    <h5 class="my-3 border-bottom pb-2">답변 수정</h5>
+    <form th:object="${answerForm}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"> <!-- CSRF값이 자동으로 생성되지 않아 수동으로 추가-->
+        <div th:replace="~{form_errors :: formErrorsFragment}"></div> <!-- th:replace 속성을 사용하면 템플릿 내에 공통 템플릿을 삽입할 수 있음-->
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea th:field="*{content}" class="form-control"
+            rows="10"></textarea>
+        </div>
+        <input type="submit" value="저장하기" class="btn-primary my-2">
+    </form>
+</div>
+</html>
