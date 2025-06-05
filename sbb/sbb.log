@@ -1,0 +1,75 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2025-06-05T13:27:00.364+09:00  INFO 88906 --- [sbb] [           main] com.example.sbb.SbbApplication           : Starting SbbApplication v0.0.2-SNAPSHOT using Java 17.0.15 with PID 88906 (/home/bae/sbb/target/sbb-0.0.2-SNAPSHOT.jar started by bae in /home/bae/sbb)
+2025-06-05T13:27:00.367+09:00  INFO 88906 --- [sbb] [           main] com.example.sbb.SbbApplication           : The following 1 profile is active: "prod"
+2025-06-05T13:27:01.380+09:00  INFO 88906 --- [sbb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-05T13:27:01.464+09:00  INFO 88906 --- [sbb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 3 JPA repository interfaces.
+2025-06-05T13:27:02.075+09:00  INFO 88906 --- [sbb] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-05T13:27:02.090+09:00  INFO 88906 --- [sbb] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-05T13:27:02.091+09:00  INFO 88906 --- [sbb] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-06-05T13:27:02.128+09:00  INFO 88906 --- [sbb] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-05T13:27:02.130+09:00  INFO 88906 --- [sbb] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1475 ms
+2025-06-05T13:27:02.311+09:00  INFO 88906 --- [sbb] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-05T13:27:02.363+09:00  INFO 88906 --- [sbb] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-06-05T13:27:02.398+09:00  INFO 88906 --- [sbb] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-05T13:27:02.649+09:00  INFO 88906 --- [sbb] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-05T13:27:02.668+09:00  INFO 88906 --- [sbb] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-05T13:27:02.841+09:00  INFO 88906 --- [sbb] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:~/local user=SA
+2025-06-05T13:27:02.854+09:00  INFO 88906 --- [sbb] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-05T13:27:02.871+09:00  WARN 88906 --- [sbb] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-05T13:27:02.886+09:00  INFO 88906 --- [sbb] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-05T13:27:03.531+09:00  INFO 88906 --- [sbb] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-05T13:27:03.568+09:00  INFO 88906 --- [sbb] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-05T13:27:03.978+09:00  INFO 88906 --- [sbb] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-05T13:27:04.540+09:00  WARN 88906 --- [sbb] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-05T13:27:04.558+09:00  INFO 88906 --- [sbb] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userSecurityService
+2025-06-05T13:27:05.135+09:00  INFO 88906 --- [sbb] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/local'
+2025-06-05T13:27:05.217+09:00  INFO 88906 --- [sbb] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-05T13:27:05.233+09:00  INFO 88906 --- [sbb] [           main] com.example.sbb.SbbApplication           : Started SbbApplication in 5.335 seconds (process running for 5.763)
+2025-06-05T13:27:10.066+09:00  INFO 88906 --- [sbb] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-05T13:27:10.067+09:00  INFO 88906 --- [sbb] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-05T13:27:10.068+09:00  INFO 88906 --- [sbb] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        distinct q1_0.id,
+        q1_0.author_id,
+        q1_0.content,
+        q1_0.create_date,
+        q1_0.modify_date,
+        q1_0.subject 
+    from
+        question q1_0 
+    left join
+        site_user su1_0 
+            on q1_0.author_id=su1_0.id 
+    left join
+        answer a2_0 
+            on a2_0.question_id=q1_0.id 
+    left join
+        site_user su2_0 
+            on a2_0.author_id=su2_0.id 
+    where
+        q1_0.subject like ? escape '' 
+        or q1_0.content like ? escape '' 
+        or su1_0.username like ? escape '' 
+        or a2_0.content like ? escape '' 
+        or su2_0.username like ? escape '' 
+    order by
+        q1_0.create_date desc 
+    fetch
+        first ? rows only
