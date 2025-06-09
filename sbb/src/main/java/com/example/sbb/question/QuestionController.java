@@ -25,11 +25,13 @@ import org.springframework.web.server.ResponseStatusException;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.sbb.answer.AnswerForm;
 
+@Slf4j
 @RequestMapping("/question") //url 프리픽스
 @RequiredArgsConstructor
 @Controller
@@ -46,6 +48,7 @@ public class QuestionController {
         // List<Question> questionList = this.questionRepository.findAll();
         // List<Question> questionList = this.questionService.getList();
         // model.addAttribute("questionList", questionList);
+        log.info("page:{}, kw:{}", page, kw);
         Page<Question> paging = this.questionService.getList(page, kw);
         model.addAttribute("paging", paging);
         model.addAttribute("kw", kw);

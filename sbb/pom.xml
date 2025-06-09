@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>sbb</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>sbb</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -104,6 +104,11 @@
 		<!-- springboot가 내부적으로 관리하는 라이브러리의 경우 버전 명시하지 않으면
 		가장 궁합이 잘 맞는 버전을 자동선택함
 		markdown의 경우 내부적으로 관리하는 라이브러리가 아니기 때문에 버전을 명시함 -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.7.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>
